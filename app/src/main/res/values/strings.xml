@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">exampleclass1part2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info">Nos encanta que quieras aplicar a nuestras becas, pero antes de todo necesitamos conocerte más.</string>
+    <string name="nombre_completo">Nombre completo:</string>
+    <string name="logo_bitlab">LOGGO BITLAB</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="numero_telefonico">Numero Telefónico</string>
+    <string name="howNotice">Como te enteraste de Bitlab?</string>
+    <string name="enviar">ENVIAR</string>
+    <string name="input_hint_name">Juan Perez</string>
+    <string name="input_hint_example">example@email.com</string>
+    <string name="msg_success">Tus datos han sido enviados con éxito</string>
+
+    <!--FROM SPINNER-->
+    <string-array name="form_spinner">
+        <item>Por redes sociales.</item>
+        <item>Un amigo me sugirió.</item>
+        <item>Otro.</item>
+    </string-array>
+</resources>

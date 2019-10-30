@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormViewFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bitlabBackground">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="220dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/logo_bitlab"
+            android:src="@drawable/image_bitlab_logo"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <TextView
+            android:id="@+id/txt_form"
+            android:layout_width="324dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/font_roboto"
+            android:text="@string/info"
+            android:textColor="@color/WHITE"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="117dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/nombre_completo"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/txt_form" />
+
+        <EditText
+            android:id="@+id/input_name"
+            style="@style/StyleInput"
+            android:layout_marginTop="8dp"
+            android:hint="@string/input_hint_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+
+        <TextView
+            android:id="@+id/txt_email"
+            style="@style/style_label_input"
+            android:layout_marginStart="1dp"
+            android:text="@string/correo_electronico"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/input_name" />
+
+        <EditText
+            android:id="@+id/input_email"
+            style="@style/StyleInput"
+            android:layout_marginTop="8dp"
+            android:hint="@string/input_hint_example"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/txt_email"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/txt_phone"
+            style="@style/style_label_input"
+            android:layout_marginStart="1dp"
+            android:text="@string/numero_telefonico"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/input_email" />
+
+        <EditText
+            android:id="@+id/input_phone"
+            style="@style/StyleInput"
+            android:layout_marginTop="8dp"
+            android:hint="503 7000 0000"
+            android:inputType="phone"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/txt_phone"
+            tools:ignore="Autofill,LabelFor,TextFields" />
+
+        <TextView
+            android:id="@+id/txt_hownotice"
+            style="@style/style_label_input"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/howNotice"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/input_phone" />
+
+        <Spinner
+            android:id="@+id/spinner_hownotice"
+            style="@style/StyleInput"
+            android:layout_marginTop="8dp"
+            android:entries="@array/form_spinner"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/txt_hownotice" />
+
+        <Button
+            android:id="@+id/button_send"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/btn_radius"
+            android:text="@string/enviar"
+            android:textColor="@color/bitlabBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.90"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

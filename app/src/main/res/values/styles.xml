@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="StyleInput" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">325dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:background">@drawable/input_radius</item>
+        <item name="android:ems">10</item>
+        <item name="android:textColorHint">@color/ALMOSTWHITE</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:layout_marginTop">35dp</item>
+        <item name="android:layout_marginEnd">43dp</item>
+    </style>
+
+    <style name="style_label_input">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/font_roboto</item>
+        <item name="android:textColor">@color/WHITE</item>
+        <item name="android:layout_marginStart">43dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
+
+</resources>
