@@ -22,11 +22,12 @@ class MainActivity : AppCompatActivity(), FormViewFragment.interfaceFormFragment
         fragM.commit()
     }
     override fun OnFragmentButtonSend() {
+        var fragMan: FragmentTransaction = supportFragmentManager.beginTransaction()
         val fragment = CollectionViewFragment.newInstance()
         Log.i("CLICK2","Existo en el Activity")
-        fragM.replace(R.id.fragment_container, fragment, "TAG2")
+        fragMan.replace(R.id.fragment_container, fragment, "TAG2")
             .addToBackStack("TAG2")
-        fragM.commit()
+        fragMan.commit()
     }
     override fun onFragmentInteraction() {
         val fragment = CollectionViewFragment.newInstance()

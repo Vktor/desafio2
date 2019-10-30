@@ -1,6 +1,7 @@
 package sv.edu.bitlab.desafio.victor
 
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction
 
 
 class FormViewFragment : Fragment() {
-    private val listener: interfaceFormFragment? = null
+    var listener: interfaceFormFragment? = null
       override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +35,16 @@ class FormViewFragment : Fragment() {
 interface interfaceFormFragment{
     fun OnFragmentButtonSend()
 }
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+
+        try {
+            listener = context as interfaceFormFragment
+        } catch (e: ClassCastException){
+            throw ClassCastException(context.toString() + "debes implementar la interface")
+        }
+
+    }
 
 }
 
