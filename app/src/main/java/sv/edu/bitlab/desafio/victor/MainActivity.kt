@@ -1,12 +1,11 @@
 package sv.edu.bitlab.desafio.victor
 
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.FragmentTransaction
 
-class MainActivity : AppCompatActivity(), FormViewFragment.interfaceFormFragment, CollectionViewFragment.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(), FormViewFragment.InterfaceFormFragment, CollectionViewFragment.OnFragmentInteractionListener {
     val fragM: FragmentTransaction = supportFragmentManager.beginTransaction()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity(), FormViewFragment.interfaceFormFragment
         fragM.replace(R.id.fragment_container, fr)
         fragM.commit()
     }
-    override fun OnFragmentButtonSend() {
+    override fun onFragmentButtonSend() {
         var fragMan: FragmentTransaction = supportFragmentManager.beginTransaction()
         val fragment = CollectionViewFragment.newInstance()
         Log.i("CLICK2","Existo en el Activity")

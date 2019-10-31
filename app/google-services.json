@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "678848165659",
+    "firebase_url": "https://bitlab-students-9bb27.firebaseio.com",
+    "project_id": "bitlab-students-9bb27",
+    "storage_bucket": "bitlab-students-9bb27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678848165659:android:71c25d3ac060d557a405be",
+        "android_client_info": {
+          "package_name": "sv.edu.bitlab.desafio.victor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678848165659-2vgv0khe6hpiheun3ir4rfchc6u9s0ku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sv.edu.bitlab.desafio.victor",
+            "certificate_hash": "c3469eb2065f77a5526d11a9b1b83a0b66c0e459"
+          }
+        },
+        {
+          "client_id": "678848165659-a7549icqdog7hu9ie3sqdtoj4nu3mc18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7bxwvZElk53kjQWVB-btU8ZaNrw6jhns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678848165659-a7549icqdog7hu9ie3sqdtoj4nu3mc18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

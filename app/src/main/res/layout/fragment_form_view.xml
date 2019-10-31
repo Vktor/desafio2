@@ -49,7 +49,10 @@
         <EditText
             android:id="@+id/input_name"
             style="@style/StyleInput"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:hint="@string/input_hint_name"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
@@ -69,7 +72,10 @@
         <EditText
             android:id="@+id/input_email"
             style="@style/StyleInput"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:hint="@string/input_hint_example"
             android:importantForAutofill="no"
             android:inputType="textEmailAddress"
@@ -90,7 +96,10 @@
         <EditText
             android:id="@+id/input_phone"
             style="@style/StyleInput"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:hint="503 7000 0000"
             android:inputType="phone"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -111,7 +120,10 @@
         <Spinner
             android:id="@+id/spinner_hownotice"
             style="@style/StyleInput"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:entries="@array/form_spinner"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -160,9 +172,60 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.9" />
+            app:layout_constraintGuide_percent="0.75" />
+
+        <TextView
+            android:id="@+id/txtVerColeccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enviar_coleccion"
+            android:contextClickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_send" />
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/success_view"
+        android:background="@color/WHITE"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="265dp"
+            android:src="@drawable/img_vector_success"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="295dp"
+            android:src="@drawable/img_vector_success2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:textSize="18sp"
+            android:textColor="@color/bitlabBackground"
+            android:textAlignment="center"
+            android:text="@string/msg_success"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
