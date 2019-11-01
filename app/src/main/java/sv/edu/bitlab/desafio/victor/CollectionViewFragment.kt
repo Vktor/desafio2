@@ -41,7 +41,7 @@ class CollectionViewFragment : Fragment() {
     }
 
     interface OnFragmentInteractionListener {
-        // TODO: Update argument type and AccountName
+        // TODO: Update argument type and accountName
         fun onFragmentInteraction()
     }
 companion object{

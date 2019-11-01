@@ -2,30 +2,42 @@ package sv.edu.bitlab.desafio.victor
 
 
 import android.content.Context
+import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.text.Layout
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.constraintlayout.widget.Constraints
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import sv.edu.bitlab.desafio.victor.data.Account
+import com.google.firebase.storage.StorageReference
+
+
 
 
 class FormViewFragment : Fragment() {
     var listener: InterfaceFormFragment? = null
     //From variable
-    var AccountName: EditText? = null
-    var AccountEmail: EditText? = null
-    var AccountPhone: EditText? = null
-    var AccountFoundBy: Spinner? = null
+    var accountName: EditText? = null
+    var accountEmail: EditText? = null
+    var accountPhone: EditText? = null
+    var accountFoundBy: Spinner? = null
     var btn_send: Button? = null
     var txt_Colleccion: TextView? = null
+    var success_view: View? =null
+    var form_view: View? = null
     var v: View? = null
     //FIREBASE
-    var db = FirebaseFirestore.getInstance()
+    private var db = FirebaseFirestore.getInstance()
+    private var mStorageRef: StorageReference = FirebaseStorage.getInstance().reference
 
+    val imageRef = mStorageRef.child("accounts-image/avatar_victor.png")
       override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,10 +47,13 @@ class FormViewFragment : Fragment() {
           btn_send = v?.findViewById<Button>(R.id.button_send)
           txt_Colleccion = v?.findViewById<TextView>(R.id.txtVerColeccion)
           //Form Data
-          AccountName = v?.findViewById<EditText>(R.id.input_name)
-          AccountEmail = v?.findViewById<EditText>(R.id.input_email)
-          AccountPhone = v?.findViewById<EditText>(R.id.input_phone)
-          AccountFoundBy = v?.findViewById(R.id.spinner_hownotice)
+          accountName = v?.findViewById<EditText>(R.id.input_name)
+          accountEmail = v?.findViewById<EditText>(R.id.input_email)
+          accountPhone = v?.findViewById<EditText>(R.id.input_phone)
+          accountFoundBy = v?.findViewById(R.id.spinner_hownotice)
+          success_view = v?.findViewById(R.id.success_view)
+          //FIREBASE STORAGE
+          mStorageRef = FirebaseStorage.getInstance().getReference();
         return v
     }
 
@@ -49,12 +64,31 @@ class FormViewFragment : Fragment() {
             listener?.onFragmentButtonSend()
         }
         btn_send?.setOnClickListener {
-            if(AccountName?.text.toString().isEmpty() || AccountEmail?.text.toString().isEmpty()){
+            if(accountName?.text.toString().isEmpty() || accountEmail?.text.toString().isEmpty()){
                 Toast.makeText(activity,"No olvide completar los campos obligatorios", Toast.LENGTH_SHORT).show()
             }else{
-                val userAccount:Account = Account(AccountName?.text.toString(), AccountEmail?.text.toString(), AccountPhone?.text.toString(), AccountFoundBy?.getSelectedItem().toString(), "example")
-                Log.i("CLICK","el AccountName es: ${AccountName?.text.toString()}, AccountEmail: ${AccountEmail?.text.toString()}, AccountFoundBy: ${AccountFoundBy?.getSelectedItem().toString()} ")
-                //sendData(userAccount)
+                //UPLOAD IMAGE
+                var image:Uri = Uri.parse("android.resource://"+ context?.packageName+"/drawable/avatar")
+                imageRef.putFile(image).addOnSuccessListener {
+                        imageRef.downloadUrl.addOnCompleteListener{task ->
+                            var url = task.result
+                            val userAccount:Account = Account(
+                                accountName?.text.toString(),
+                                accountEmail?.text.toString(),
+                                accountPhone?.text.toString(),
+                                accountFoundBy?.getSelectedItem().toString(),
+                                url.toString()
+                            )
+                            //Log.i("CLICK","el accountName es: ${accountName?.text.toString()}, URL DE LA IMAGEN: ${url.toString()}, accountFoundBy: ${accountFoundBy?.getSelectedItem().toString()} ")
+                            sendData(userAccount)
+                            success_view?.visibility = View.VISIBLE
+                            Handler().postDelayed({
+                               listener?.onFragmentButtonSend()
+                                success_view?.visibility = View.GONE
+                            },3000)
+                        }
+                }
+
             }
         }
     }
@@ -82,6 +116,7 @@ interface InterfaceFormFragment{
         }
 
     }
+
 
 }
 

@@ -14,6 +14,7 @@
     <string name="input_hint_example">example@email.com</string>
     <string name="msg_success">Tus datos han sido enviados con éxito</string>
     <string name="enviar_coleccion"><u>Enviar Coleccion</u></string>
+    <string name="tv_backForm">Regresar al Formulario</string>
 
     <!--FROM SPINNER-->
     <string-array name="form_spinner">
