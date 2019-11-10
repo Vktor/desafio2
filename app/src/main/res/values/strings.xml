@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">exampleclass1part2</string>
+    <string name="app_name">Desafio 2</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -14,7 +14,7 @@
     <string name="input_hint_example">example@email.com</string>
     <string name="msg_success">Tus datos han sido enviados con éxito</string>
     <string name="enviar_coleccion"><u>Enviar Coleccion</u></string>
-    <string name="tv_backForm">Regresar al Formulario</string>
+    <string name="tv_backForm"><u>Agregar un nuevo Registro</u></string>
 
     <!--FROM SPINNER-->
     <string-array name="form_spinner">

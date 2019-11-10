@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CollectionViewFragment">
+    tools:context=".CollectionViewFragment"
+    android:background="@color/bitlabBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,10 +15,15 @@
             android:id="@+id/tv_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tv_backForm" />
+            android:text="@string/tv_backForm"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_collection"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
     </LinearLayout>
 </FrameLayout>
