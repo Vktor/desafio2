@@ -6,6 +6,13 @@ import android.util.Log
 import androidx.fragment.app.FragmentTransaction
 
 class MainActivity : AppCompatActivity(), FormViewFragment.InterfaceFormFragment, CollectionViewFragment.OnFragmentInteractionListener {
+    override fun back(bk: FormViewFragment) {
+        val formmu = supportFragmentManager.beginTransaction()
+        formmu.replace(R.id.fragment_container, bk).addToBackStack(null)
+        formmu.commit()
+
+    }
+
     val fragM: FragmentTransaction = supportFragmentManager.beginTransaction()
 
     override fun onCreate(savedInstanceState: Bundle?) {
