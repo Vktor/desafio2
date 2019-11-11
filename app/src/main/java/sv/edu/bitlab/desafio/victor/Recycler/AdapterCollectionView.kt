@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import kotlinx.android.extensions.LayoutContainer
@@ -26,7 +27,7 @@ class AdapterCollectionView(options:FirestoreRecyclerOptions<Account>):
             email.text = model.accountEmail
             phone.text = model.accountPhone
             found.text = model.accountFoundOutBy
-            //imageGlide(image, model.accountImage)
+            imageGlide(image, model.accountImage)
         }
     }
 
@@ -36,8 +37,11 @@ class AdapterCollectionView(options:FirestoreRecyclerOptions<Account>):
         var email = containerView.findViewById<TextView>(R.id.tv_email_item)
         var phone = containerView.findViewById<TextView>(R.id.tv_item_phone)
         var found = containerView.findViewById<TextView>(R.id.tv_howiknow_item)
-        //var image = containerView.findViewById<ImageView>(R.id.iv_item)
+        var image = containerView.findViewById<ImageView>(R.id.iv_item)
 
+    }
+    fun imageGlide(imageView: ImageView, url: String?){
+        Glide.with(imageView).load(url).into(imageView)
     }
 
 }
